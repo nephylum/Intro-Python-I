@@ -35,13 +35,17 @@ def cal(*num):
     calendar.prmonth(int(num[1]), int(num[0]))
 
 
-if sys.argv[1]:
-    if sys.argv[2]:
-        cal(sys.argv[1], sys.argv[2])
-    else:
-        cal(datetime.now().year, sys.argv[1])
-else:
-    cal(datetime.now().year, datetime.now().month)
+try:
+    m = sys.argv[1]
+except:
+    m = datetime.now().month
+
+try:
+    y = sys.argv[2]
+except:
+    y = datetime.now().year
+
+cal(int(m), int(y))
 
 # def cal(month, year = datetime.now().year):
 #
