@@ -11,21 +11,20 @@ x.append(4)
 print(x)
 
 # Using y, change x so that it is [1, 2, 3, 4, 8, 9, 10]
-# YOUR CODE HERE
-import numpy as np
-x = np.concatenate([x, y])
+
+x.extend(y)
 print(x)
 
 # Change x so that it is [1, 2, 3, 4, 9, 10]
-x = np.delete(x, 4)
+x.remove(8)
 print(x)
 
 # Change x so that it is [1, 2, 3, 4, 9, 99, 10]
-x = np.insert(x, 5, 99)
+x.insert(5, 99)
 print(x)
 
 # Print the length of list x
 print(len(x))
 
 # Print all the values in x multiplied by 1000
-print(x *5)
+print([x * 1000 for x in x])
